@@ -5,12 +5,16 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.graphics.BitmapFactory
 import android.graphics.drawable.Icon
 import android.media.*
 import android.os.Binder
 import android.os.IBinder
 import androidx.appcompat.app.AlertDialog
 import org.rocstreaming.roctoolkit.*
+import java.io.IOException
+import java.net.URL
+
 
 private const val SAMPLE_RATE = 44100
 private const val BUFFER_SIZE = 100
@@ -108,12 +112,14 @@ class SenderReceiverService : Service() {
             getString(R.string.notification_stop_receiver_action),
             pendingStopReceiverIntent
         ).build()
+        val ROCbitmap = BitmapFactory.decodeResource(applicationContext.resources, R.drawable.roc_icon)
         return Notification.Builder(this, CHANNEL_ID).apply {
             setContentTitle(getString(R.string.notification_title))
             setContentText(getContentText(sending, receiving))
-            setSmallIcon(R.drawable.ic_launcher_foreground)
+            setSmallIcon(R.drawable.ic_play)
             setVisibility(Notification.VISIBILITY_PUBLIC)
             setContentIntent(pendingMainActivityIntent)
+            setLargeIcon(ROCbitmap)
             if (sending) {
                 addAction(stopSenderAction)
             }

@@ -18,7 +18,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <TextView
         android:id="@+id/receiverExplanation"
@@ -43,7 +44,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/receiverExplanation" />
+        app:layout_constraintTop_toBottomOf="@+id/receiverExplanation"
+        android:theme="@style/AppTheme.Button"/>
+
 
     <TextView
         android:id="@+id/headerSender"
@@ -79,11 +82,10 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:fontFamily="monospace"
-        android:hint="@string/receiver_ip"
         android:inputType="number|phone"
         android:autofillHints=""
         android:singleLine="true"
-        android:text="@string/default_receiver_ip"
+        android:hint="@string/default_receiver_ip"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,6 +102,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/receiverIp"
-        tools:layout_constraintStart_toStartOf="parent" />
-
+        tools:layout_constraintStart_toStartOf="parent"
+        android:theme="@style/AppTheme.Button"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
